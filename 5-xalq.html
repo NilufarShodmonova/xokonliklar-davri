@@ -222,19 +222,21 @@ body.light #dots i.on{background:#a97c2c}
 .ph code{font-size:clamp(13px,1.05vw,18px);color:var(--dim);background:rgba(255,255,255,.05);
  padding:8px 16px;border-radius:8px;border:1px solid var(--line)}
 
-/* ---------- липкая кнопка возврата в главное меню ---------- */
-#tomenu{position:fixed;left:50%;bottom:2.2vh;transform:translateX(-50%);z-index:60;
- display:inline-flex;align-items:center;gap:.7em;padding:.8em 1.9em;
- font-family:var(--serif);font-size:clamp(13px,1.05vw,19px);letter-spacing:.2em;
+/* ---------- bosh menyuga qaytish tugmasi: uy belgisi + yozuv ---------- */
+#tomenu{position:fixed;left:50%;bottom:2.4vh;transform:translateX(-50%);z-index:60;
+ display:inline-flex;align-items:center;gap:.75em;padding:.62em 1.7em .62em 1.35em;
+ font-family:var(--serif);font-size:clamp(13px,1.05vw,20px);letter-spacing:.2em;
  text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--gp);
  border:1.5px solid var(--line);border-radius:999px;background:rgba(9,17,29,.66);
  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
  box-shadow:0 .8vh 2.4vh rgba(0,0,0,.45);transition:all .3s var(--e)}
-#tomenu:hover{border-color:var(--g);color:var(--gl);background:rgba(14,26,42,.8)}
-#tomenu:active{transform:translateX(-50%) scale(.96)}
-#tomenu svg{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:2.2}
-body.light #tomenu{color:var(--ink);background:rgba(255,252,244,.72);border-color:rgba(90,70,40,.3)}
-body.light #tomenu:hover{color:#a97c2c;border-color:#a97c2c}
+#tomenu:hover{border-color:var(--g);color:var(--gl);background:rgba(14,26,42,.8);
+ box-shadow:0 1vh 3vh rgba(0,0,0,.55),0 0 2.2vh rgba(216,178,108,.28)}
+#tomenu:active{transform:translateX(-50%) scale(.95)}
+#tomenu svg{width:1.5em;height:1.5em;flex:0 0 auto;fill:none;stroke:currentColor;
+ stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.light #tomenu{color:var(--ink);background:rgba(255,252,244,.78);border-color:rgba(90,70,40,.3)}
+body.light #tomenu:hover{color:#a97c2c;border-color:#a97c2c;background:rgba(255,252,244,.92)}
 /* точки-индикаторы поднимаем над кнопкой */
 #dots{bottom:9.4vh}
 
@@ -562,9 +564,8 @@ go=function(k){
 go(0);
 })();
 </script>
-<a id="tomenu" href="index.html#tp-menu" aria-label="Bosh menyu">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span id="tomenu-t">BOSH MENYU</span></a>
+<a id="tomenu" href="index.html#tp-menu" aria-label="Bosh menyu" title="Bosh menyu">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.3 12 4l9 7.3"/><path d="M5.8 10.2V20h12.4v-9.8"/><path d="M9.9 20v-5.4h4.2V20"/></svg><span id="tomenu-t">BOSH MENYU</span></a>
 <script>
 (function(){
   var L=null;
@@ -573,8 +574,10 @@ go(0);
   if(L!=='uz'&&L!=='ru'&&L!=='en'){ L='uz'; }
   var T={uz:'BOSH MENYU',ru:'\u0413\u041b\u0410\u0412\u041d\u041e\u0415 \u041c\u0415\u041d\u042e',en:'MAIN MENU'};
   var a=document.getElementById('tomenu');
-  document.getElementById('tomenu-t').textContent=T[L];
+  var t=document.getElementById('tomenu-t');
+  if(t) t.textContent=T[L];
   a.setAttribute('aria-label',T[L]);
+  a.setAttribute('title',T[L]);
   a.href='index.html?lang='+L+'#tp-menu';
 })();
 </script>
