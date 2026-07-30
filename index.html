@@ -2,7 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=1920, height=1080, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Buyuk Ipak yo‘li ekspozitsiyasi — bo‘limlar</title>
 <style>
 :root{
@@ -430,6 +430,16 @@ body.tp-mode-inner .tp-bg__veil{
   .tp-lang{width:11.8rem;height:9.4rem;border-radius:5.9rem 5.9rem .9rem .9rem}
   .tp-lang__code{font-size:2.35rem;padding-top:0}
 }
+
+/* ---------- kiosk rejimi: masshtab (zoom) o‘chirilgan, 1920×1080 bazasi ---------- */
+html{width:100%;height:100%;-ms-content-zooming:none;-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}
+html,body{
+  overscroll-behavior:none;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+  -webkit-user-select:none;-moz-user-select:none;user-select:none;
+  -webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;
+}
+*{touch-action:pan-x pan-y}
 </style>
 </head>
 <body>
@@ -733,6 +743,38 @@ en:{
 
   window.addEventListener('hashchange', checkHashNav);
   checkHashNav();
+})();
+</script>
+<script>
+/* ---------- kiosk: barcha zoom harakatlarini bloklash va 1920×1080 ko‘rinishiga qaytarish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); }
+  ['gesturestart','gesturechange','gestureend'].forEach(function(t){
+    document.addEventListener(t, stop, {passive:false});
+  });
+  document.addEventListener('touchmove', function(e){
+    if(e.touches && e.touches.length > 1) stop(e);
+  }, {passive:false});
+  document.addEventListener('wheel', function(e){
+    if(e.ctrlKey || e.metaKey) stop(e);
+  }, {passive:false});
+  document.addEventListener('keydown', function(e){
+    if((e.ctrlKey || e.metaKey) && ['+','-','=','_','0'].indexOf(e.key) !== -1) stop(e);
+  }, {passive:false});
+  document.addEventListener('dblclick', stop, {passive:false});
+  function reset(){
+    try{ document.body.style.zoom = ''; }catch(e){}
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
+  window.addEventListener('resize', reset);
+  window.addEventListener('orientationchange', reset);
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize', reset);
+    window.visualViewport.addEventListener('scroll', reset);
+  }
+  document.addEventListener('DOMContentLoaded', reset);
+  window.addEventListener('load', reset);
+  reset();
 })();
 </script>
 </body>
