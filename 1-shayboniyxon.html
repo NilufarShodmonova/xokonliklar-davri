@@ -143,6 +143,22 @@ body.light #dots i.on{background:#a97c2c}
   .sl.on .ti h1,.sl.on .ti p,.sl.on .ti .kick,.sl.on #src li,.sl.on .fig .art img
   {animation-duration:.01s!important;animation-delay:0s!important}
 }
+
+/* ---------- липкая кнопка возврата в главное меню ---------- */
+#tomenu{position:fixed;left:50%;bottom:2.2vh;transform:translateX(-50%);z-index:60;
+ display:inline-flex;align-items:center;gap:.7em;padding:.8em 1.9em;
+ font-family:var(--serif);font-size:clamp(13px,1.05vw,19px);letter-spacing:.2em;
+ text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--gp);
+ border:1.5px solid var(--line);border-radius:999px;background:rgba(9,17,29,.66);
+ -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ box-shadow:0 .8vh 2.4vh rgba(0,0,0,.45);transition:all .3s var(--e)}
+#tomenu:hover{border-color:var(--g);color:var(--gl);background:rgba(14,26,42,.8)}
+#tomenu:active{transform:translateX(-50%) scale(.96)}
+#tomenu svg{width:1.05em;height:1.05em;fill:none;stroke:currentColor;stroke-width:2.2}
+body.light #tomenu{color:var(--ink);background:rgba(255,252,244,.72);border-color:rgba(90,70,40,.3)}
+body.light #tomenu:hover{color:#a97c2c;border-color:#a97c2c}
+/* точки-индикаторы поднимаем над кнопкой */
+#dots{bottom:9.4vh}
 </style>
 </head>
 <body>
@@ -358,6 +374,22 @@ document.getElementById('deck').addEventListener('click',function(e){
   var fwd=e.clientX>innerWidth*0.5; sndSwipe(fwd?1:-1); go(fwd? i+1 : i-1); pause();
 });
 go(0);
+})();
+</script>
+<a id="tomenu" href="index.html#tp-menu" aria-label="Bosh menyu">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span id="tomenu-t">BOSH MENYU</span></a>
+<script>
+(function(){
+  var L=null;
+  try{ L=new URLSearchParams(location.search).get('lang'); }catch(e){}
+  if(L!=='uz'&&L!=='ru'&&L!=='en'){ L=null; try{ L=localStorage.getItem('bipLang'); }catch(e){} }
+  if(L!=='uz'&&L!=='ru'&&L!=='en'){ L='uz'; }
+  var T={uz:'BOSH MENYU',ru:'\u0413\u041b\u0410\u0412\u041d\u041e\u0415 \u041c\u0415\u041d\u042e',en:'MAIN MENU'};
+  var a=document.getElementById('tomenu');
+  document.getElementById('tomenu-t').textContent=T[L];
+  a.setAttribute('aria-label',T[L]);
+  a.href='index.html?lang='+L+'#tp-menu';
 })();
 </script>
 </body>
