@@ -257,10 +257,19 @@ body.light .pghead__name{color:var(--ink)}
 .arx .plate{top:calc(var(--hh) + 2vh)}
 .arx .card{top:calc(var(--hh) + 4vh)}
 @media (max-width:1200px){ .arx .card{top:auto} }
+
+/* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
+img{
+  -webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;          /* teginish rasmga emas, slayderga tushadi */
+}
+*{touch-action:none}   /* slayd sahifalarida brauzer jestlari kerak emas */
 </style>
 </head>
 <body>
-<header class="pghead"><img class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">XARITALAR</div></header>
+<header class="pghead"><img draggable="false" class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">XARITALAR</div></header>
 <div id="bar"></div>
 <div id="deck">
 <section class="sl on" data-i="0" data-d="9000" data-light="0">
@@ -271,49 +280,49 @@ body.light .pghead__name{color:var(--ink)}
 </section>
 <section class="sl" data-i="2" data-d="12000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/3-xaritalar-arxi-01.jpg" alt="Tartaria"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-01.jpg" alt="Tartaria"></div>
     <div class="card"><div class="no">Arxiv · 01 / 07</div><div class="yr">1600</div><h2>Tartaria</h2><div class="au">Petrus Bertius</div><p>Yevropa Markaziy Osiyoni hali ikkinchi qo‘ldan — sayyoh va savdogar xabarlari asosida chizadi. Buyuk Ipak yo‘li yagona yo‘nalish sifatida allaqachon o‘tmishda qolgan: xaritada yo‘l emas, daryo va shahar nomlari asosiy o‘rinni egallaydi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1600</i><i class="">1706</i><i class="">1766</i><i class="">1806</i><i class="">1838</i><i class="">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="3" data-d="12000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/3-xaritalar-arxi-02.jpg" alt="Carte de Tartarie"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-02.jpg" alt="Carte de Tartarie"></div>
     <div class="card"><div class="no">Arxiv · 02 / 07</div><div class="yr">1706</div><h2>Carte de Tartarie</h2><div class="au">Guillaume Delisle</div><p>Fransuz ilmiy kartografiyasining boshlanishi. Delisle xabarlarni tanqidiy solishtirgan va shaharlarni ancha aniq joylashtirgan. Buxoro, Samarqand va Xiva xaritada barqaror nuqtaga aylanadi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="on">1706</i><i class="">1766</i><i class="">1806</i><i class="">1838</i><i class="">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="4" data-d="12000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/3-xaritalar-arxi-03.jpg" alt="Carte de Tartarie dressée sur les relations"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-03.jpg" alt="Carte de Tartarie dressée sur les relations"></div>
     <div class="card"><div class="no">Arxiv · 03 / 07</div><div class="yr">1766</div><h2>Carte de Tartarie dressée sur les relations</h2><div class="au">noma’lum nashriyot</div><p>«Relations» — ya’ni safar hisobotlari asosida tuzilgan xarita. Bu davrda karvon yo‘nalishlari sekin-asta chiziq sifatida tushirila boshlaydi: xarita endi nafaqat qayerda, balki qanday borishni ham ko‘rsatadi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="">1706</i><i class="on">1766</i><i class="">1806</i><i class="">1838</i><i class="">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="5" data-d="12000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/3-xaritalar-arxi-04.jpg" alt="Tartary or Central Asia"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-04.jpg" alt="Tartary or Central Asia"></div>
     <div class="card"><div class="no">Arxiv · 04 / 07</div><div class="yr">1806</div><h2>Tartary or Central Asia</h2><div class="au">John Cary</div><p>Ingliz tijorat kartografiyasi. XIX asr boshida mintaqa Yevropa uchun siyosiy qiziqish ob’ektiga aylanadi — xaritalar aniqroq va tijoratda ommalashadi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="">1706</i><i class="">1766</i><i class="on">1806</i><i class="">1838</i><i class="">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="6" data-d="12000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/3-xaritalar-arxi-05.jpg" alt="Western Siberia, Independent Tartary, Khiva, Bokhara"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-05.jpg" alt="Western Siberia, Independent Tartary, Khiva, Bokhara"></div>
     <div class="card"><div class="no">Arxiv · 05 / 07</div><div class="yr">1838</div><h2>Western Siberia, Independent Tartary, Khiva, Bokhara</h2><div class="au">XIX asr nashri</div><p>Sarlavhaning o‘zi muhim: «Independent Tartary» — mustaqil xonliklar. Xiva va Buxoro alohida davlat sifatida ko‘rsatiladi, shimolga — Orenburg va Volga tomon ketadigan yo‘nalishlar belgilanadi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="">1706</i><i class="">1766</i><i class="">1806</i><i class="on">1838</i><i class="">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="7" data-d="12000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/3-xaritalar-arxi-06.jpg" alt="Carte de la mer d'Aral et du Khanat de Khiva"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-06.jpg" alt="Carte de la mer d'Aral et du Khanat de Khiva"></div>
     <div class="card"><div class="no">Arxiv · 06 / 07</div><div class="yr">1851</div><h2>Carte de la mer d'Aral et du Khanat de Khiva</h2><div class="au">XIX asr o‘rtasi</div><p>Bitta xonlikka bag‘ishlangan maxsus xarita. Orol va Amudaryo quyi oqimi batafsil chiziladi — chunki bu yerda yo‘lning taqdirini aynan suv va kechuv belgilagan.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="">1706</i><i class="">1766</i><i class="">1806</i><i class="">1838</i><i class="on">1851</i><i class="">1888</i></div>
 </section>
 <section class="sl" data-i="8" data-d="12000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/3-xaritalar-arxi-07.jpg" alt="Map of East and West Turkestan"></div>
+    <div class="plate"><img draggable="false" src="images/3-xaritalar-arxi-07.jpg" alt="Map of East and West Turkestan"></div>
     <div class="card"><div class="no">Arxiv · 07 / 07</div><div class="yr">1888</div><h2>Map of East and West Turkestan</h2><div class="au">Encyclopædia Britannica, 9-nashr</div><p>Asr oxiri. Hudud allaqachon o‘lchangan va tavsiflangan: xaritada yo‘llar, bekatlar va yangi temir yo‘l ko‘rinadi. Karvon yo‘li davri yopiladi, uning o‘rniga boshqa transport keladi.</p><div class="lic">Wikimedia Commons · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1600</i><i class="">1706</i><i class="">1766</i><i class="">1806</i><i class="">1838</i><i class="">1851</i><i class="on">1888</i></div>
@@ -560,6 +569,23 @@ window.addEventListener('load',run);
   document.addEventListener('DOMContentLoaded', reset);
   window.addEventListener('load', reset);
   reset();
+})();
+</script>
+<script>
+/* ---------- rasm/matnni sudrash va uzoq bosish menyusini o‘chirish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); return false; }
+  document.addEventListener('dragstart', stop, {passive:false});
+  document.addEventListener('drop', stop, {passive:false});
+  document.addEventListener('selectstart', stop, {passive:false});
+  document.addEventListener('contextmenu', stop, {passive:false});
+  function mark(){
+    var im = document.images, i;
+    for(i=0;i<im.length;i++){ im[i].setAttribute('draggable','false'); im[i].ondragstart = stop; }
+  }
+  mark();
+  document.addEventListener('DOMContentLoaded', mark);
+  window.addEventListener('load', mark);
 })();
 </script>
 </body>

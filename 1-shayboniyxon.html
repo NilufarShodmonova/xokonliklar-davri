@@ -217,17 +217,26 @@ body.light .pghead__name{color:var(--ink)}
 .arx .plate{top:calc(var(--hh) + 2vh)}
 .arx .card{top:calc(var(--hh) + 4vh)}
 @media (max-width:1200px){ .arx .card{top:auto} }
+
+/* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
+img{
+  -webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;          /* teginish rasmga emas, slayderga tushadi */
+}
+*{touch-action:none}   /* slayd sahifalarida brauzer jestlari kerak emas */
 </style>
 </head>
 <body>
-<header class="pghead"><img class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">SHAYBONIYXON KO‘PRIGI</div></header>
+<header class="pghead"><img draggable="false" class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">SHAYBONIYXON KO‘PRIGI</div></header>
 <div id="bar"></div>
 <div id="deck">
 <section class="sl on" data-i="0" data-d="9000" data-light="0">
   <div class="ti"><svg class="arch" viewBox="0 0 110 122" fill="none" stroke="#c9973f" stroke-width="2"><path d="M14 118 L14 52 C14 26 32 6 55 4 C78 6 96 26 96 52 L96 118"/><path d="M36 118 L36 66 A19 19 0 0 1 74 66 L74 118"/></svg><div class="kick">1502-yil · Zarafshon suvayirg‘ich ko‘prigi</div><h1>SHAYBONIYXON KO‘PRIGI</h1><div class="rule"></div><p>XVI asr muhandislik durdonasi. Bir vaqtning o‘zida ko‘prik ham, suv taqsimlagich ham bo‘lgan yagona inshoot.</p></div>
 </section>
 <section class="sl" data-i="1" data-d="10000" data-light="0">
-  <div class="vis cover alt"><img src="images/1-shayboniyxon-01.jpg" alt="Ko‘prik qanday bo‘lgan"></div>
+  <div class="vis cover alt"><img draggable="false" src="images/1-shayboniyxon-01.jpg" alt="Ko‘prik qanday bo‘lgan"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Ko‘prik qanday bo‘lgan</h2><p>Yetti ravoqli, uzunligi 200 metrdan ortiq g‘isht ko‘prik. Zarafshon ustidan o‘tgan va shu bilan birga daryo suvini ikkiga bo‘lib bergan.</p></div>
   <div class="cr">A. R. Muhammadjonov chizmalari asosida Yu. Shevchenko rekonstruksiyasi</div>
@@ -236,7 +245,7 @@ body.light .pghead__name{color:var(--ink)}
   <div class="lst"><h2>Ko‘prikning to‘rt nomi</h2><p class="sub">Bir inshoot, to‘rt nom. Xalq xotirasida u turli davrlar va turli hukmdorlar nomi bilan bog‘langan — shuning uchun uni ko‘pincha Amir Temur qurdirgan deb o‘ylashadi.</p><ol><li>«Temur ravog‘i»</li><li>«Puli Shodmon malik»</li><li>«Abdullaxon ko‘prigi»</li><li>«Shayboniyxon suvayirg‘ich ko‘prigi»</li></ol></div>
 </section>
 <section class="sl" data-i="3" data-d="10000" data-light="0">
-  <div class="vis cover alt"><img src="images/1-shayboniyxon-02.jpg" alt="Joylashuvi"></div>
+  <div class="vis cover alt"><img draggable="false" src="images/1-shayboniyxon-02.jpg" alt="Joylashuvi"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Joylashuvi</h2><p>Samarqand shahri markazidan 7–8 km shimoli-sharqda, Zarafshon daryosining so‘l qirg‘og‘ida. Ko‘prik o‘qi daryo o‘zaniga 102° burchak ostida qo‘yilgan — bu suv oqimini hisobga olgan yechim.</p></div>
 </section>
@@ -244,55 +253,55 @@ body.light .pghead__name{color:var(--ink)}
   <div class="lst"><h2>1502 — qanday qurilgan</h2><p class="sub">Butun ish bir oy ichida bajarilgan. Bunday tezlikning sababi oddiy — qurilishda butun qo‘shin ishlagan, ya’ni yo‘l qurilishi davlat ishi sifatida qaralgan.</p><ol><li>Qo‘shin Buxorodan Samarqandga qaytmoqda — eski kechuv vayron holatda</li><li>Xon shu joyda yangi ko‘prik qurishni buyuradi, Samarqandning eng yaxshi me’morlari chaqiriladi</li><li>Maxsus ishlab chiqilgan reja bo‘yicha daryo to‘g‘on bilan to‘siladi</li><li>Tayanchlar quruq o‘rinda ko‘tariladi, qurilishda butun qo‘shin ishtirok etadi</li><li>1502-yil 3-noyabr — ko‘prik ochiladi</li></ol></div>
 </section>
 <section class="sl" data-i="5" data-d="10000" data-light="0">
-  <div class="vis contain alt"><img src="images/1-shayboniyxon-03.jpg" alt="1502-yil 3-noyabr — ochilish"></div>
+  <div class="vis contain alt"><img draggable="false" src="images/1-shayboniyxon-03.jpg" alt="1502-yil 3-noyabr — ochilish"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>1502-yil 3-noyabr — ochilish</h2><p>Qurilish bir oy ichida tugallandi. Xon qo‘shini bilan Buxorodan qaytayotib eski kechuvni vayron holda topgan, shu joyda yangi ko‘prik qurishni buyurgan edi.</p></div>
   <div class="cr">«Shayboniyxon suvayirg‘ich ko‘prigini ochilish marosimi»</div>
 </section>
 <section class="sl" data-i="6" data-d="11000" data-light="1">
-  <div class="fig"><div class="art"><img src="images/1-shayboniyxon-04.jpg" alt="O‘lchovlar"></div><div class="cap"><h2>O‘lchovlar</h2><p>Yetti ravoq, har biri taxminan 28,0 metr. Umumiy uzunligi 200 metrdan ortiq, balandligi taxminan 15,0 metr.</p></div></div>
+  <div class="fig"><div class="art"><img draggable="false" src="images/1-shayboniyxon-04.jpg" alt="O‘lchovlar"></div><div class="cap"><h2>O‘lchovlar</h2><p>Yetti ravoq, har biri taxminan 28,0 metr. Umumiy uzunligi 200 metrdan ortiq, balandligi taxminan 15,0 metr.</p></div></div>
 </section>
 <section class="sl" data-i="7" data-d="11000" data-light="1">
-  <div class="fig"><div class="art"><img src="images/1-shayboniyxon-05.jpg" alt="Ko‘ndalang kesim — 1-ravoq"></div><div class="cap"><h2>Ko‘ndalang kesim — 1-ravoq</h2><p>Ravoq oralig‘i 21,60 m, balandligi 11,85 m, ko‘prik yo‘lagining kengligi 9,10 m. Tok ikki qavatli qilib terilgan — bu yuk taqsimlanishini yaxshilaydi.</p></div></div>
+  <div class="fig"><div class="art"><img draggable="false" src="images/1-shayboniyxon-05.jpg" alt="Ko‘ndalang kesim — 1-ravoq"></div><div class="cap"><h2>Ko‘ndalang kesim — 1-ravoq</h2><p>Ravoq oralig‘i 21,60 m, balandligi 11,85 m, ko‘prik yo‘lagining kengligi 9,10 m. Tok ikki qavatli qilib terilgan — bu yuk taqsimlanishini yaxshilaydi.</p></div></div>
 </section>
 <section class="sl" data-i="8" data-d="11000" data-light="1">
-  <div class="fig"><div class="art"><img src="images/1-shayboniyxon-06.jpg" alt="Ravoq tuzilishi"></div><div class="cap"><h2>Ravoq tuzilishi</h2><p>Yuqori toqining qalinligi 125 sm, pastki toqining qalinligi 165 sm. G‘isht o‘lchami 26–27 × 26–27 × 5 sm. Ikki tomonda bozu — tirgak qanotlar; g‘ov — himoya devorining eni va balandligi 1,0 metr.</p></div></div>
+  <div class="fig"><div class="art"><img draggable="false" src="images/1-shayboniyxon-06.jpg" alt="Ravoq tuzilishi"></div><div class="cap"><h2>Ravoq tuzilishi</h2><p>Yuqori toqining qalinligi 125 sm, pastki toqining qalinligi 165 sm. G‘isht o‘lchami 26–27 × 26–27 × 5 sm. Ikki tomonda bozu — tirgak qanotlar; g‘ov — himoya devorining eni va balandligi 1,0 metr.</p></div></div>
 </section>
 <section class="sl" data-i="9" data-d="13000" data-light="0">
   <div class="lst"><h2>Qorishmalar — uch xil zona</h2><p class="sub">Har bir balandlikda o‘z qorishmasi. Suv ostida ohak, o‘rtada ganch, yuqorida quruq sharoitga mos qorishma — ya’ni material namlik darajasiga qarab tanlangan.</p><ol><li>Poydevor, suv osti qismi — o‘simlik kuli va ganch aralash ohak</li><li>O‘rta qism — o‘simlik kuli aralash ganch</li><li>Yuqori qism, quruq sharoitda — ganch qorishmasi</li><li>Poydevor yaxlit tabiiy qoya ustiga qo‘yilgan</li></ol></div>
 </section>
 <section class="sl" data-i="10" data-d="11000" data-light="1">
-  <div class="fig"><div class="art"><img src="images/1-shayboniyxon-07.jpg" alt="Asosiy sir — suvayirg‘ich"></div><div class="cap"><h2>Asosiy sir — suvayirg‘ich</h2><p>Ko‘prik ostidagi to‘g‘on Zarafshon suvini Oqdaryo va Qoradaryoga teng taqsimlab bergan. Ya’ni bu faqat o‘tish joyi emas, balki gidrotexnika inshooti edi.</p></div></div>
+  <div class="fig"><div class="art"><img draggable="false" src="images/1-shayboniyxon-07.jpg" alt="Asosiy sir — suvayirg‘ich"></div><div class="cap"><h2>Asosiy sir — suvayirg‘ich</h2><p>Ko‘prik ostidagi to‘g‘on Zarafshon suvini Oqdaryo va Qoradaryoga teng taqsimlab bergan. Ya’ni bu faqat o‘tish joyi emas, balki gidrotexnika inshooti edi.</p></div></div>
 </section>
 <section class="sl" data-i="11" data-d="13000" data-light="0">
   <div class="lst"><h2>Nima uchun bu muhim</h2><p class="sub">Bitta inshoot uchta vazifani bajargan: yo‘l, suv taqsimlash va sug‘orish.</p><ol><li>Karvon yo‘llarini bog‘lagan: Samarqand — Toshkent vohasi, Sirdaryo bo‘ylari, Farg‘ona vodiysi va Nurota orqali Buxoro</li><li>Zarafshon suvini Oqdaryo va Qoradaryoga bo‘lib bergan</li><li>Miyonkol va boshqa tumanlarni sug‘orishda muhim rol o‘ynagan</li><li>O‘zbekistonda gidrotexnika taraqqiyoti tarixida betakror yodgorlik</li></ol></div>
 </section>
 <section class="sl" data-i="12" data-d="10000" data-light="0">
-  <div class="vis cover"><img src="images/1-shayboniyxon-08.jpg" alt="XX asr boshlari"></div>
+  <div class="vis cover"><img draggable="false" src="images/1-shayboniyxon-08.jpg" alt="XX asr boshlari"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>XX asr boshlari</h2><p>Bu suratda ko‘prikdan ikki ravoq turgani ko‘rinadi. Chapdagi ravoq butun, o‘ngdagi yarim vayron holatda. Ravoq ostidan hali ham arava o‘tgan.</p></div>
   <div class="cr">XX asr boshlaridagi surat</div>
 </section>
 <section class="sl" data-i="13" data-d="10000" data-light="0">
-  <div class="vis contain alt"><img src="images/1-shayboniyxon-09.jpg" alt="«XV asrda qurilgan»"></div>
+  <div class="vis contain alt"><img draggable="false" src="images/1-shayboniyxon-09.jpg" alt="«XV asrda qurilgan»"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>«XV asrda qurilgan»</h2><p>Eski rus otkritkasida ko‘prik XV asrga oid deb yozilgan. Aslida u 1502-yilda, ya’ni XVI asr boshida qurilgan. Xato atribusiya shu davrdan boshlangan.</p></div>
   <div class="cr">«Самаркандъ. Арка на рѣкѣ Зеровшанѣ» — eski otkritka</div>
 </section>
 <section class="sl" data-i="14" data-d="10000" data-light="0">
-  <div class="vis contain"><img src="images/1-shayboniyxon-10.jpg" alt="Bitta ravoq qolganda"></div>
+  <div class="vis contain"><img draggable="false" src="images/1-shayboniyxon-10.jpg" alt="Bitta ravoq qolganda"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Bitta ravoq qolganda</h2><p>Keyingi suratlarda faqat bitta ravoq turadi. Odam va arava bilan solishtirilganda ravoqning haqiqiy o‘lchami yaqqol ko‘rinadi — balandligi qariyb 12 metr.</p></div>
   <div class="cr">pastvu.com / abdulla_hasan</div>
 </section>
 <section class="sl" data-i="15" data-d="11000" data-light="1">
-  <div class="fig"><div class="art"><img src="images/1-shayboniyxon-11.jpg" alt="Nima saqlanib qolgan"></div><div class="cap"><h2>Nima saqlanib qolgan</h2><p>2-ravoq ustunining qoldig‘i — 8,50 × 3,80 metr. 3-ravoqning poydevori ham qisman saqlangan. Qolgan ravoqlar suv va zilzila tufayli yo‘qolgan.</p></div></div>
+  <div class="fig"><div class="art"><img draggable="false" src="images/1-shayboniyxon-11.jpg" alt="Nima saqlanib qolgan"></div><div class="cap"><h2>Nima saqlanib qolgan</h2><p>2-ravoq ustunining qoldig‘i — 8,50 × 3,80 metr. 3-ravoqning poydevori ham qisman saqlangan. Qolgan ravoqlar suv va zilzila tufayli yo‘qolgan.</p></div></div>
 </section>
 <section class="sl" data-i="16" data-d="13000" data-light="0">
   <div class="lst"><h2>Ko‘prik qanday yo‘qoldi</h2><p class="sub">To‘rt yuz yil davomida inshoot asta-sekin yo‘qoldi. Uni buzgan asosiy kuchlar — suv va zilzila.</p><ol><li>1502 — yetti ravoq bilan qurildi</li><li>XIX asr — uch ravoq saqlangan</li><li>1898 — zilzila natijasida yana ikki ravoq quladi</li><li>Bugun — faqat bitta, oxirgi ravoq turadi</li></ol></div>
 </section>
 <section class="sl" data-i="17" data-d="10000" data-light="0">
-  <div class="vis contain alt"><img src="images/1-shayboniyxon-12.jpg" alt="Meros"></div>
+  <div class="vis contain alt"><img draggable="false" src="images/1-shayboniyxon-12.jpg" alt="Meros"></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Meros</h2><p>Bugun Zarafshon ustidan o‘tgan har bir ko‘prik — 1502-yilda qabul qilingan qarorning davomi. Yakka qolgan ravoq esa O‘zbekiston gidrotexnika tarixining betakror yodgorligi.</p></div>
   <div class="cr">Rekonstruksiya detali</div>
@@ -534,6 +543,23 @@ window.addEventListener('load',run);
   document.addEventListener('DOMContentLoaded', reset);
   window.addEventListener('load', reset);
   reset();
+})();
+</script>
+<script>
+/* ---------- rasm/matnni sudrash va uzoq bosish menyusini o‘chirish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); return false; }
+  document.addEventListener('dragstart', stop, {passive:false});
+  document.addEventListener('drop', stop, {passive:false});
+  document.addEventListener('selectstart', stop, {passive:false});
+  document.addEventListener('contextmenu', stop, {passive:false});
+  function mark(){
+    var im = document.images, i;
+    for(i=0;i<im.length;i++){ im[i].setAttribute('draggable','false'); im[i].ondragstart = stop; }
+  }
+  mark();
+  document.addEventListener('DOMContentLoaded', mark);
+  window.addEventListener('load', mark);
 })();
 </script>
 </body>

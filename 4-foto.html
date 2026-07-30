@@ -258,10 +258,19 @@ body.light .pghead__name{color:var(--ink)}
 .arx .plate{top:calc(var(--hh) + 2vh)}
 .arx .card{top:calc(var(--hh) + 4vh)}
 @media (max-width:1200px){ .arx .card{top:auto} }
+
+/* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
+img{
+  -webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;          /* teginish rasmga emas, slayderga tushadi */
+}
+*{touch-action:none}   /* slayd sahifalarida brauzer jestlari kerak emas */
 </style>
 </head>
 <body>
-<header class="pghead"><img class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">FOTOSURATLAR</div></header>
+<header class="pghead"><img draggable="false" class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">FOTOSURATLAR</div></header>
 <div id="bar"></div>
 <div id="deck">
 <section class="sl on" data-i="0" data-d="9000" data-light="0">
@@ -272,91 +281,91 @@ body.light .pghead__name{color:var(--ink)}
 </section>
 <section class="sl" data-i="2" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-01.jpg" alt="Shodmon malik ko‘prigi"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-01.jpg" alt="Shodmon malik ko‘prigi"></div>
     <div class="card"><div class="no">Arxiv · 01 / 13</div><div class="yr">1871–1872</div><h2>Shodmon malik ko‘prigi</h2><div class="au">Turkiston albomi</div><p>Zarafshon ustidagi ko‘prik xarobasi. «Puli Shodmon malik» — bu Shayboniyxon suvayirg‘ich ko‘prigining xalq orasidagi nomlaridan biri. Suratda 1502-yilda qurilgan inshootdan qolgan ravoq ko‘rinadi.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1871–1872</i><i class="">1890</i></div>
 </section>
 <section class="sl" data-i="3" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-02.jpg" alt="Shodmon malik ko‘prigi — g‘arbdan"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-02.jpg" alt="Shodmon malik ko‘prigi — g‘arbdan"></div>
     <div class="card"><div class="no">Arxiv · 02 / 13</div><div class="yr">1871–1872</div><h2>Shodmon malik ko‘prigi — g‘arbdan</h2><div class="au">Turkiston albomi</div><p>Xuddi shu ko‘prik boshqa tomondan. Ravoq va tayanch qoldiqlari yaqqol ko‘rinadi — aynan shu suratlar keyingi rekonstruksiyalar uchun asos bo‘lgan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1871–1872</i><i class="">1890</i></div>
 </section>
 <section class="sl" data-i="4" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-03.jpg" alt="Jar Ko‘prik, Qorabuloq"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-03.jpg" alt="Jar Ko‘prik, Qorabuloq"></div>
     <div class="card"><div class="no">Arxiv · 03 / 13</div><div class="yr">1871–1872</div><h2>Jar Ko‘prik, Qorabuloq</h2><div class="au">Turkiston albomi</div><p>Qishloq yaqinidagi ko‘prik. Kichik ko‘prik ham yo‘lning ishlashi uchun katta ko‘prik kabi zarur: usiz yo‘nalish har toshqinda uzilib qolgan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1871–1872</i><i class="">1890</i></div>
 </section>
 <section class="sl" data-i="5" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-04.jpg" alt="Pochta yo‘li, Avliyoota"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-04.jpg" alt="Pochta yo‘li, Avliyoota"></div>
     <div class="card"><div class="no">Arxiv · 04 / 13</div><div class="yr">1871–1872</div><h2>Pochta yo‘li, Avliyoota</h2><div class="au">Turkiston albomi</div><p>Arxivdagi eng oddiy va eng muhim kadr: yo‘lning o‘zi. Qoplama yo‘q — zichlangan iz, ikki chetda ariq. Xonliklar davridan qolgan yo‘l aynan shunday ko‘rinishda edi.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1871–1872</i><i class="">1890</i></div>
 </section>
 <section class="sl" data-i="6" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-05.jpg" alt="Mirza Rabot xarobalari"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-05.jpg" alt="Mirza Rabot xarobalari"></div>
     <div class="card"><div class="no">Arxiv · 05 / 13</div><div class="yr">1871–1872</div><h2>Mirza Rabot xarobalari</h2><div class="au">Turkiston albomi</div><p>Mirzacho‘ldagi bekat qoldiqlari. Rabot — yo‘l bo‘yidagi istehkom va to‘xtash joyi. Cho‘lda bunday nuqta bo‘lmasa, yo‘nalish ishlamagan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="on">1871–1872</i><i class="">1890</i></div>
 </section>
 <section class="sl" data-i="7" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-06.jpg" alt="Mirza Rabot — 19 yildan keyin"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-06.jpg" alt="Mirza Rabot — 19 yildan keyin"></div>
     <div class="card"><div class="no">Arxiv · 06 / 13</div><div class="yr">1890</div><h2>Mirza Rabot — 19 yildan keyin</h2><div class="au">Pol Nadar</div><p>O‘sha rabot, ammo endi u pochta bekati. O‘ngda sardoba gumbazi: suv ombori hamon ishlaydi. Ikki surat orasida 19 yil — va yo‘l tizimi o‘zgarmagan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="8" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-07.jpg" alt="Temur Darvoza — Sanzar darasi"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-07.jpg" alt="Temur Darvoza — Sanzar darasi"></div>
     <div class="card"><div class="no">Arxiv · 07 / 13</div><div class="yr">1890</div><h2>Temur Darvoza — Sanzar darasi</h2><div class="au">Pol Nadar</div><p>Jizzax yaqinidagi tor tog‘ yo‘lagi. Asrlar davomida Samarqand va Toshkent vohasini bog‘lagan yagona qulay o‘tish joyi — shuning uchun bu nuqta doim nazorat ostida bo‘lgan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="9" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-08.jpg" alt="Tarantas yo‘lda"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-08.jpg" alt="Tarantas yo‘lda"></div>
     <div class="card"><div class="no">Arxiv · 08 / 13</div><div class="yr">1890</div><h2>Tarantas yo‘lda</h2><div class="au">Pol Nadar</div><p>Yo‘lovchi aravasi. Uning g‘ildiragi yo‘l sifatini o‘lchaydigan eng aniq asbob edi: har chuqurlik va har iz darrov sezilgan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="10" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-09.jpg" alt="Pochta bekatida"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-09.jpg" alt="Pochta bekatida"></div>
     <div class="card"><div class="no">Arxiv · 09 / 13</div><div class="yr">1890</div><h2>Pochta bekatida</h2><div class="au">Pol Nadar</div><p>Bekatda ot almashtirilgan, yo‘lovchi dam olgan. Bekatlar orasidagi masofa bir kunlik yurishga moslashgan — xuddi karvonsaroylar tartibidek.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="11" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-10.jpg" alt="Chinoz kechuvi"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-10.jpg" alt="Chinoz kechuvi"></div>
     <div class="card"><div class="no">Arxiv · 10 / 13</div><div class="yr">1890</div><h2>Chinoz kechuvi</h2><div class="au">Pol Nadar</div><p>Sirdaryodagi parom kechuvi. Ko‘prik yo‘q joyda yo‘l suvda uziladi va parom bilan davom etadi — bu butun yo‘nalishning eng zaif nuqtasi.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="12" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-11.jpg" alt="Aravalar paromda"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-11.jpg" alt="Aravalar paromda"></div>
     <div class="card"><div class="no">Arxiv · 11 / 13</div><div class="yr">1890</div><h2>Aravalar paromda</h2><div class="au">Pol Nadar</div><p>Aravani paromga chiqarish alohida ish edi. Suv sathi ko‘tarilsa, kechuv yopilgan va yo‘lovchilar kunlab kutgan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="13" data-d="11000" data-light="0">
   <div class="arx alt">
-    <div class="plate"><img src="images/4-foto-12.jpg" alt="Paromchi"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-12.jpg" alt="Paromchi"></div>
     <div class="card"><div class="no">Arxiv · 12 / 13</div><div class="yr">1890</div><h2>Paromchi</h2><div class="au">Pol Nadar</div><p>Kechuvni odam boshqargan. Paromchi — yo‘l tizimining bir qismi: uning ishi ko‘prik vazifasini bajargan.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
 </section>
 <section class="sl" data-i="14" data-d="11000" data-light="0">
   <div class="arx">
-    <div class="plate"><img src="images/4-foto-13.jpg" alt="Amudaryo ko‘prigi yonida"></div>
+    <div class="plate"><img draggable="false" src="images/4-foto-13.jpg" alt="Amudaryo ko‘prigi yonida"></div>
     <div class="card"><div class="no">Arxiv · 13 / 13</div><div class="yr">1890</div><h2>Amudaryo ko‘prigi yonida</h2><div class="au">Pol Nadar</div><p>Amudaryo bo‘yi. Bu yerda eski kechuv yonida yangi — temir yo‘l ko‘prigi paydo bo‘ladi. Karvon yo‘li davri shu nuqtada yopiladi.</p><div class="lic">Jamoat mulki · Public domain</div></div>
   </div>
 <div class="yrs"><div class="ln"></div><i class="">1871–1872</i><i class="on">1890</i></div>
@@ -603,6 +612,23 @@ window.addEventListener('load',run);
   document.addEventListener('DOMContentLoaded', reset);
   window.addEventListener('load', reset);
   reset();
+})();
+</script>
+<script>
+/* ---------- rasm/matnni sudrash va uzoq bosish menyusini o‘chirish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); return false; }
+  document.addEventListener('dragstart', stop, {passive:false});
+  document.addEventListener('drop', stop, {passive:false});
+  document.addEventListener('selectstart', stop, {passive:false});
+  document.addEventListener('contextmenu', stop, {passive:false});
+  function mark(){
+    var im = document.images, i;
+    for(i=0;i<im.length;i++){ im[i].setAttribute('draggable','false'); im[i].ondragstart = stop; }
+  }
+  mark();
+  document.addEventListener('DOMContentLoaded', mark);
+  window.addEventListener('load', mark);
 })();
 </script>
 </body>

@@ -294,10 +294,19 @@ body.light .pghead__name{color:var(--ink)}
 .arx .plate{top:calc(var(--hh) + 2vh)}
 .arx .card{top:calc(var(--hh) + 4vh)}
 @media (max-width:1200px){ .arx .card{top:auto} }
+
+/* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
+img{
+  -webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;          /* teginish rasmga emas, slayderga tushadi */
+}
+*{touch-action:none}   /* slayd sahifalarida brauzer jestlari kerak emas */
 </style>
 </head>
 <body>
-<header class="pghead"><img class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">YO‘L QURILISH TEXNOLOGIYASI</div></header>
+<header class="pghead"><img draggable="false" class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">YO‘L QURILISH TEXNOLOGIYASI</div></header>
 <div id="bar"></div>
 <div id="deck">
 <section class="sl on" data-i="0" data-d="9000" data-light="0">
@@ -309,7 +318,7 @@ body.light .pghead__name{color:var(--ink)}
 </section>
 <section class="sl" data-i="2" data-d="10000" data-light="0">
   <div class="era">Buxoro xonligi</div>
-  <div class="vis cover"><img src="images/2-yoll-01.jpg" alt="Buxoro — yo‘llar tuguni" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Buxoro — yo‘llar tuguni</b><code>buxoro-chorminor.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/2-yoll-01.jpg" alt="Buxoro — yo‘llar tuguni" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Buxoro — yo‘llar tuguni</b><code>buxoro-chorminor.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Buxoro — yo‘llar tuguni</h2><p>Xonlikning poytaxti va savdo markazi. Bu yerda yo‘l shahar ichida ham davom etgan: chorraha ustiga savdo gumbazlari qurilgan, karvon esa shahar chetidagi saroylarda to‘xtagan.</p></div>
 </section>
@@ -339,19 +348,19 @@ body.light .pghead__name{color:var(--ink)}
 </section>
 <section class="sl" data-i="9" data-d="10000" data-light="0">
   <div class="era">XVI–XIX asrlar</div>
-  <div class="vis cover"><img src="images/2-yoll-02.jpg" alt="Sardoba — cho‘l yo‘lining tayanchi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Sardoba — cho‘l yo‘lining tayanchi</b><code>sardoba.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/2-yoll-02.jpg" alt="Sardoba — cho‘l yo‘lining tayanchi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Sardoba — cho‘l yo‘lining tayanchi</b><code>sardoba.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Sardoba — cho‘l yo‘lining tayanchi</h2><p>Yer osti suv omborisi ustidagi gumbaz. Bahorda to‘plangan suv yozgacha yetgan. Sardobalar yo‘l bo‘ylab zanjir bo‘lib joylashgan: ular orasidagi masofa yo‘nalishning haqiqiy uzunligini belgilagan.</p></div>
 </section>
 <section class="sl" data-i="10" data-d="10000" data-light="0">
   <div class="era">XVI–XIX asrlar</div>
-  <div class="vis cover"><img src="images/2-yoll-03.jpg" alt="Rabot — yo‘l bo‘yidagi qal’a" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Rabot — yo‘l bo‘yidagi qal’a</b><code>rabot-portal.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/2-yoll-03.jpg" alt="Rabot — yo‘l bo‘yidagi qal’a" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Rabot — yo‘l bo‘yidagi qal’a</b><code>rabot-portal.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Rabot — yo‘l bo‘yidagi qal’a</h2><p>Buxoro — Samarqand yo‘lidagi Raboti Malik. Devor va peshtoq bugungacha saqlangan. Bunday inshoot bir vaqtning o‘zida karvonsaroy, istehkom va nazorat punkti bo‘lgan.</p></div>
 </section>
 <section class="sl" data-i="11" data-d="10000" data-light="0">
   <div class="era">XVI asr</div>
-  <div class="vis cover"><img src="images/2-yoll-04.jpg" alt="XVI asr — eng katta qurilish davri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>XVI asr — eng katta qurilish davri</b><code>rabot-devor.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/2-yoll-04.jpg" alt="XVI asr — eng katta qurilish davri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>XVI asr — eng katta qurilish davri</b><code>rabot-devor.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>XVI asr — eng katta qurilish davri</h2><p>Abdullaxon II davrida savdo yo‘llarini obodonlashtirish bo‘yicha keng qamrovli ishlar olib borilgan: butun mamlakat bo‘ylab ko‘plab karvonsaroy, sardoba va ko‘priklar barpo etilgan.</p></div>
 </section>
@@ -365,7 +374,7 @@ body.light .pghead__name{color:var(--ink)}
 </section>
 <section class="sl" data-i="14" data-d="10000" data-light="0">
   <div class="era">XIX asr</div>
-  <div class="vis cover"><img src="images/2-yoll-05.jpg" alt="XIX asr — Qo‘qon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>XIX asr — Qo‘qon</b><code>qoqon-saroy.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/2-yoll-05.jpg" alt="XIX asr — Qo‘qon" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>XIX asr — Qo‘qon</b><code>qoqon-saroy.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>XIX asr — Qo‘qon</h2><p>Uch xonlikning har biri o‘z markazini quradi va o‘z yo‘nalishlarini saqlaydi. Qo‘qon vodiyni bir tizimga bog‘lagan yo‘lning markaziga aylanadi.</p></div>
 </section>
@@ -675,6 +684,23 @@ window.addEventListener('load',run);
   document.addEventListener('DOMContentLoaded', reset);
   window.addEventListener('load', reset);
   reset();
+})();
+</script>
+<script>
+/* ---------- rasm/matnni sudrash va uzoq bosish menyusini o‘chirish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); return false; }
+  document.addEventListener('dragstart', stop, {passive:false});
+  document.addEventListener('drop', stop, {passive:false});
+  document.addEventListener('selectstart', stop, {passive:false});
+  document.addEventListener('contextmenu', stop, {passive:false});
+  function mark(){
+    var im = document.images, i;
+    for(i=0;i<im.length;i++){ im[i].setAttribute('draggable','false'); im[i].ondragstart = stop; }
+  }
+  mark();
+  document.addEventListener('DOMContentLoaded', mark);
+  window.addEventListener('load', mark);
 })();
 </script>
 </body>

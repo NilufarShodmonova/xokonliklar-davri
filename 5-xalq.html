@@ -294,10 +294,19 @@ body.light .pghead__name{color:var(--ink)}
 .arx .plate{top:calc(var(--hh) + 2vh)}
 .arx .card{top:calc(var(--hh) + 4vh)}
 @media (max-width:1200px){ .arx .card{top:auto} }
+
+/* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
+img{
+  -webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+  pointer-events:none;          /* teginish rasmga emas, slayderga tushadi */
+}
+*{touch-action:none}   /* slayd sahifalarida brauzer jestlari kerak emas */
 </style>
 </head>
 <body>
-<header class="pghead"><img class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">XALQ OG‘ZAKI IJODIDA YO‘LLAR</div></header>
+<header class="pghead"><img draggable="false" class="pghead__logo" src="images/logo.png" alt=""><div class="pghead__name">XALQ OG‘ZAKI IJODIDA YO‘LLAR</div></header>
 <div id="bar"></div>
 <div id="deck">
 <section class="sl on" data-i="0" data-d="9000" data-light="0">
@@ -310,7 +319,7 @@ body.light .pghead__name{color:var(--ink)}
   <div class="ix"><h2>Yo‘l haqida maqollar</h2><p class="sub">Maqolni bosing — uning ma’nosi va yo‘lga aloqasi chiqadi.</p><div class="body"><div class="stage"><div class="ixbs txt"><button class="ixb tx" data-k="m0"><b>Yo‘l azobi — go‘r azobi</b></button><button class="ixb tx" data-k="m1"><b>Yo‘l yurganga qisqarar</b></button><button class="ixb tx" data-k="m2"><b>Yurgan — daryo, o‘tirgan — bo‘yra</b></button><button class="ixb tx" data-k="m3"><b>Yo‘lni karvondan so‘ra, so‘zni shoirdan so‘ra</b></button><button class="ixb tx" data-k="m4"><b>Yo‘l topguncha, yo‘ldosh top</b></button><button class="ixb tx" data-k="m5"><b>Yo‘ldoshini tashlagan yo‘lda qolar</b></button><button class="ixb tx" data-k="m6"><b>Olis yo‘l otni sinar, og‘ir yo‘l mardni sinar</b></button><button class="ixb tx" data-k="m7"><b>Do‘st safarda sinalar</b></button></div></div><div><div class="ixp"><h3></h3><p class="plc"></p></div><div class="hint"><i></i>Maqolni bosing</div></div></div></div>
 </section>
 <section class="sl" data-i="3" data-d="10000" data-light="0">
-  <div class="vis cover"><img src="images/5-xalq-01.jpg" alt="Dutor chalayotgan odam" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Dutor chalayotgan odam</b><code>b01.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/5-xalq-01.jpg" alt="Dutor chalayotgan odam" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Dutor chalayotgan odam</b><code>b01.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Dutor chalayotgan odam</h2><p>Turkiston albomidan olingan surat, 1865–1872-yillar. Bu — xonliklar davriga eng yaqin fotografiya: shu qo‘l va shu cholg‘u bilan doston aytilgan. Baxshi bir kechada yuzlab misrani yoddan kuylagan.</p></div>
   <div class="cr">Turkiston albomi, 1865–1872 · Library of Congress, jamoat mulki</div>
@@ -319,7 +328,7 @@ body.light .pghead__name{color:var(--ink)}
   <div class="lst"><h2>Baxshichilik maktablari</h2><p class="sub">Har maktabning o‘z ohangi va o‘z yo‘li bor edi. Doston yo‘l bilan tarqalgan: baxshi yurgan joyda variant ham tug‘ilgan.</p><ol><li>Janubiy O‘zbekiston maktabi — «Alpomish» variantlari bilan mashhur</li><li>Qo‘rg‘on dostonchiligi (Samarqand) — dostonni muhabbatli qilib aytgan</li><li>Xorazm baxshilari — «Oshiq G‘arib», «Hurliqo va Hamro»</li><li>Xorazm xalfalari — «Yusuf va Zulayxo», «Tohir va Zuhra»</li></ol></div>
 </section>
 <section class="sl" data-i="5" data-d="10000" data-light="0">
-  <div class="vis cover"><img src="images/5-xalq-02.jpg" alt="Karnaychi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Karnaychi</b><code>b03.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/5-xalq-02.jpg" alt="Karnaychi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Karnaychi</b><code>b03.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Karnaychi</h2><p>Karnay ovozi uzoqdan eshitilgan: u bayram va to‘y boshlanganini butun mahallaga bildirgan. Yo‘lda kelayotgan karvon ham shu ovoz bilan kutib olingan.</p></div>
   <div class="cr">Turkiston albomi, 1865–1872 · jamoat mulki</div>
@@ -331,7 +340,7 @@ body.light .pghead__name{color:var(--ink)}
   <div class="ix"><h2>«Alpomish» — safar dostoni</h2><p class="sub">Dostondagi safar bosqichlarini bosib ko‘ring.</p><div class="body"><div class="stage"><div class="ixbs txt"><button class="ixb tx" data-k="a0"><b>Qo‘ng‘irot — vatan</b></button><button class="ixb tx" data-k="a1"><b>Yo‘lga chiqish</b></button><button class="ixb tx" data-k="a2"><b>Yo‘lda topilgan do‘st</b></button><button class="ixb tx" data-k="a3"><b>Qalmoq eli va zindon</b></button><button class="ixb tx" data-k="a4"><b>Boychibor</b></button><button class="ixb tx" data-k="a5"><b>Qaytish</b></button></div></div><div><div class="ixp"><h3></h3><p class="plc"></p></div><div class="hint"><i></i>Bosqichni bosing</div></div></div></div>
 </section>
 <section class="sl" data-i="8" data-d="10000" data-light="0">
-  <div class="vis cover"><img src="images/5-xalq-03.jpg" alt="Nog‘orachi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Nog‘orachi</b><code>b05.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/5-xalq-03.jpg" alt="Nog‘orachi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Nog‘orachi</b><code>b05.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Nog‘orachi</h2><p>Zarb — dostonning ritmi. Nog‘ora qahramonning oti chopganini, jang boshlanganini va yo‘l sur’atini tinglovchiga yetkazgan.</p></div>
   <div class="cr">Turkiston albomi, 1865–1872 · jamoat mulki</div>
@@ -340,7 +349,7 @@ body.light .pghead__name{color:var(--ink)}
   <div class="lst"><h2>Ernazar baxshi va amirning oti</h2><p class="sub">Bu rivoyat baxshichilikning eng muhim xususiyatini ko‘rsatadi: doston qotib qolgan matn emas, u har ijroda qayta tug‘ilgan.</p><ol><li>Ernazar baxshi Buxoro amiri Nasrullo huzurida «Alpomish» ni kuylagan</li><li>U qahramonning zindondan qutulishini uzoq cho‘zib aytgan</li><li>Sabri tugagan amir o‘zining jang oti egarlanib, shoir ro‘parasiga bog‘lanishini buyurgan</li><li>Xushyor baxshi shu otni dostonga kiritib, Alpomishni aynan o‘sha ot qutqargan qilib kuylagan</li></ol></div>
 </section>
 <section class="sl" data-i="10" data-d="10000" data-light="0">
-  <div class="vis cover"><img src="images/5-xalq-04.jpg" alt="Sozandalar guruhi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Sozandalar guruhi</b><code>b02.jpg</code></div></div>
+  <div class="vis cover"><img draggable="false" src="images/5-xalq-04.jpg" alt="Sozandalar guruhi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="#c9973f" stroke-width="1.2"><path d="M3 8.6h3.2l1.5-2.4h8.6l1.5 2.4H21v10.8H3z"/><circle cx="12" cy="13.8" r="3.6"/></svg><b>Sozandalar guruhi</b><code>b02.jpg</code></div></div>
   <div class="scrim"></div>
   <div class="cap"><h2>Sozandalar guruhi</h2><p>Doston har doim yolg‘iz aytilmagan: baxshi yoniga sozandalar qo‘shilgan. Ijro bir necha kecha davom etgan — tinglovchi qahramon bilan birga yo‘l bosgan.</p></div>
   <div class="cr">Turkiston albomi, 1865–1872 · jamoat mulki</div>
@@ -652,6 +661,23 @@ window.addEventListener('load',run);
   document.addEventListener('DOMContentLoaded', reset);
   window.addEventListener('load', reset);
   reset();
+})();
+</script>
+<script>
+/* ---------- rasm/matnni sudrash va uzoq bosish menyusini o‘chirish ---------- */
+(function(){
+  function stop(e){ if(e.cancelable) e.preventDefault(); return false; }
+  document.addEventListener('dragstart', stop, {passive:false});
+  document.addEventListener('drop', stop, {passive:false});
+  document.addEventListener('selectstart', stop, {passive:false});
+  document.addEventListener('contextmenu', stop, {passive:false});
+  function mark(){
+    var im = document.images, i;
+    for(i=0;i<im.length;i++){ im[i].setAttribute('draggable','false'); im[i].ondragstart = stop; }
+  }
+  mark();
+  document.addEventListener('DOMContentLoaded', mark);
+  window.addEventListener('load', mark);
 })();
 </script>
 </body>
