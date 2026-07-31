@@ -269,7 +269,7 @@ html,body{
 *{touch-action:pan-x pan-y}
 
 /* ---------- sahifa shapkasi: logo + bo‘lim nomi (bosh menyudagi kabi) ---------- */
-:root{--hh:8.6vh}
+:root{--hh:8.6vh;--gap-top:40px}
 .pghead{
   position:fixed;left:0;right:0;top:0;height:var(--hh);z-index:40;
   display:flex;align-items:center;gap:1.6vw;padding:0 2.6vw;
@@ -293,12 +293,13 @@ body.light .pghead__name{color:var(--ink)}
 /* shapka ostidagi bo‘sh joy */
 #bar{z-index:50}
 #cnt{top:calc(var(--hh) + 2.2vh)}
-.ti,.lst,#src{padding-top:var(--hh)}
-.ix{padding-top:calc(var(--hh) + 2.5vh)}
-.fig .art{padding-top:calc(var(--hh) + 2vh)}
-.vis.contain img{padding-top:calc(var(--hh) + 2vh)}
-.arx .plate{top:calc(var(--hh) + 2vh)}
-.arx .card{top:calc(var(--hh) + 4vh)}
+.ti,.lst,#src{padding-top:calc(var(--hh) + var(--gap-top))}
+.ix{padding-top:calc(var(--hh) + 2.5vh + var(--gap-top))}
+.fig .art{padding-top:calc(var(--hh) + 2vh + var(--gap-top))}
+.vis.contain img{padding-top:calc(var(--hh) + 2vh + var(--gap-top))}
+.arx .plate{top:calc(var(--hh) + 2vh + var(--gap-top))}
+.arx .card{top:calc(var(--hh) + 4vh + var(--gap-top))}
+.era{top:calc(8vh + var(--gap-top))}
 @media (max-width:1200px){ .arx .card{top:auto} }
 
 /* ---------- rasmni ushlab sudrab bo‘lmaydi: faqat slayder swipe qoladi ---------- */
