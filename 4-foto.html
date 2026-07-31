@@ -117,8 +117,10 @@ body{font-family:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;color:#f5eedf;u
 
 /* ---------- управление ---------- */
 #nav{position:fixed;inset:0;pointer-events:none;z-index:20}
-#sldnav{position:absolute;right:2.4vw;bottom:2.4vh;display:flex;gap:1.1vw;
- pointer-events:auto;align-items:center}
+/* slayd tugmalari — ekranning chap va o‘ng chetida, sarlavha ostidagi maydon markazida */
+#sldnav{position:absolute;left:2.4vw;right:2.4vw;top:calc(50% + var(--hh,0px)/2);
+ transform:translateY(-50%);display:flex;justify-content:space-between;align-items:center;
+ pointer-events:none}
 .sldbtn{width:clamp(44px,3.4vw,60px);height:clamp(44px,3.4vw,60px);
  border-radius:50%;border:1.5px solid var(--line);background:rgba(9,17,29,.55);color:var(--gp);
  cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;
