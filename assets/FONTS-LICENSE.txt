@@ -6,6 +6,10 @@ assets/fonts.css ichiga base64 shaklida joylangan shriftlar:
   Cormorant SC       — Copyright (c) Christian Thalmann (Catharsis Fonts)
   Cinzel             — Copyright (c) Natanael Gama
 
+assets/fonts-ui.css ichiga base64 shaklida joylangan shrift:
+
+  Manrope            — Copyright (c) Mikhail Sharanda (github.com/sharanda/manrope)
+
 Barchasi SIL Open Font License 1.1 (OFL) asosida tarqatiladi —
 erkin foydalanish, o‘zgartirish va hujjat ichiga joylashtirishga ruxsat beradi.
 Manba: https://fonts.google.com
