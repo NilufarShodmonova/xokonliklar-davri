@@ -310,7 +310,7 @@ body.tp-mode-inner .tp-bg__veil{
 
 .tp-card{
   position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
   gap:1.5rem;padding:3.4rem 1.6rem;
   min-height:25rem;
   background:linear-gradient(170deg,rgba(22,41,74,.86) 0%,rgba(11,21,38,.92) 100%);
@@ -345,12 +345,16 @@ body.tp-mode-inner .tp-bg__veil{
 .tp-card__num{
   font-family:var(--tp-display);font-size:1.2rem;letter-spacing:.4em;
   color:var(--tp-gold-deep);
+  flex:0 0 auto;
 }
 .tp-card__title{
   font-family:var(--tp-display);
-  max-width:100%;
+  width:100%;max-width:100%;
+  flex:1 1 auto;
+  display:flex;align-items:center;justify-content:center;
   font-size:1.74rem;line-height:1.35;letter-spacing:.09em;
   color:var(--tp-gold-hi);text-transform:uppercase;
+  overflow-wrap:break-word;hyphens:auto;
 }
 
 /* ============ АНИМАЦИИ ============ */
