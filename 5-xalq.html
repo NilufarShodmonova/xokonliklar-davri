@@ -372,7 +372,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>«O‘zbek xalq maqollari» — «Sharq» nashriyoti, Toshkent, 2005</li><li>Maqollar O‘zR FA Til va adabiyot instituti folklor arxividan yozib olingan</li><li>«Alpomish» — Fozil Yo‘ldosh o‘g‘li varianti</li><li>To‘ra Mirzayev. «Alpomish» dostonining o‘zbek variantlari. Toshkent: Fan, 1968</li><li>Baxshichilik san’ati bo‘yicha zamonaviy ilmiy nashrlar</li><li>Suratlar: Turkiston albomi (1865–1872), Library of Congress — jamoat mulki</li></ul><div class="nt">Maqollar matni akademik to‘plamdan o‘zgartirishsiz keltirilgan. Doston mazmuni Fozil Yo‘ldosh o‘g‘li variantiga tayanadi; baxshilar ijrosida tafsilotlar farq qiladi.</div></div>
 </section>
 </div>
-<div id="nav"><button id="play" aria-label="Pauza / davom"><svg id="pi" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
 <script>
 var IXD={"2": {"m0": ["Yo‘l azobi — go‘r azobi", "Yo‘l mashaqqati eng og‘ir azob bilan qiyoslanadi. Karvon yo‘liga chiqqan odam uchun bu majoz emas edi: cho‘l, dovon va kechuv har safar hayot bilan o‘ynashdi."], "m1": ["Yo‘l yurganga qisqarar", "Yo‘l faqat harakat qilgan odam uchun qisqaradi. To‘xtab qolgan uchun esa u cheksiz bo‘lib ko‘rinadi."], "m2": ["Yurgan — daryo, o‘tirgan — bo‘yra", "Yurgan odam daryodek tirik va foydali; o‘tirgan esa bo‘yradek bir joyda qoladi. Xalq harakatni hayotning o‘zi bilan tenglashtirgan."], "m3": ["Yo‘lni karvondan so‘ra, so‘zni shoirdan so‘ra", "Har ishni o‘z ustasidan so‘rash kerak. Yo‘lni bilgan — karvon, so‘zni bilgan — shoir. Bu maqolda yo‘l bilimi alohida hunar sifatida tan olinadi."], "m4": ["Yo‘l topguncha, yo‘ldosh top", "Safarda hamroh yo‘ldan muhimroq: yo‘ldosh bo‘lsa, yo‘l baribir topiladi. Karvon tartibi ham shu qoidaga asoslangan."], "m5": ["Yo‘ldoshini tashlagan yo‘lda qolar", "Hamrohini tashlab ketgan odam oxir-oqibat o‘zi yolg‘iz qoladi. Uzoq yo‘lda birdamlik — omon qolishning sharti edi."], "m6": ["Olis yo‘l otni sinar, og‘ir yo‘l mardni sinar", "Yo‘l — sinov. U otning ham, odamning ham asl qiyofasini ochib beradi."], "m7": ["Do‘st safarda sinalar", "Do‘stlikning haqiqiy o‘lchovi — birga bosib o‘tilgan yo‘l. Shuning uchun safar xalq tasavvurida sinov maydoni sanalgan."]}, "7": {"a0": ["Qo‘ng‘irot — vatan", "Doston Qo‘ng‘irot elidan boshlanadi. Boysari o‘z eli bilan Qalmoq eliga ko‘chib ketadi — shu ko‘chish butun voqeani harakatga keltiradi."], "a1": ["Yo‘lga chiqish", "Alpomish Barchinni olib kelish uchun uzoq safarga chiqadi. Bu — dostondagi markaziy «safar motivi» ning boshlanishi."], "a2": ["Yo‘lda topilgan do‘st", "Safar chog‘ida Alpomish Qorajon bilan do‘st tutinadi va shartlarni u bilan birga bajaradi. Yo‘l do‘st beradi — bu maqollardagi «yo‘ldosh» g‘oyasining dostondagi ko‘rinishi."], "a3": ["Qalmoq eli va zindon", "Alpomish amakisini qutqarish uchun Qalmoq eliga boradi va yetti yil zindonda qoladi. Tadqiqotchilar bu bosqichni oddiy asirlik emas, qahramonning sinovi deb izohlaydi."], "a4": ["Boychibor", "Qahramon zindondan oti Boychibor yordamida qutuladi. Otsiz yo‘l ham, qutulish ham yo‘q — ot dostonda yo‘lning tirik qismi."], "a5": ["Qaytish", "O‘z eliga qaytgan Alpomish adolatni tiklaydi. Safar shaxsiy maqsaddan (Barchinga yetishish) umumxalq manfaatiga (el birligi) o‘tishning vositasi bo‘lib chiqadi."]}, "11": {}};
 
@@ -479,17 +479,12 @@ function pause(){
   playing=false; clearTimeout(tid);
   left=Math.max(0, left-(Date.now()-t0));
   freezeBar();
-  document.getElementById('pi').innerHTML=PL;
 }
 function resume(){
   if(playing) return;
   playing=true;
-  document.getElementById('pi').innerHTML=PI;
   schedule(left>800? left : dur());
 }
-document.getElementById('play').addEventListener('click',function(e){
-  e.stopPropagation(); sndTap(); playing? pause() : resume();
-});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}

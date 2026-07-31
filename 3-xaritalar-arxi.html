@@ -336,7 +336,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>Wikimedia Commons — barcha xaritalar jamoat mulki (Public domain)</li><li>Library of Congress — Markaziy Osiyo xaritalari to‘plami</li><li>UNESCO Silk Roads Programme — Ipak yo‘li bo‘yicha xalqaro tadqiqotlar</li><li>Turkiston to‘plami va XIX asr geografik nashrlari</li></ul><div class="nt">Xaritalar sana, muallif va nomi bo‘yicha manba ma’lumotlaridan olingan. Har bir xaritaning ichki mazmuni — qaysi yo‘l qayerdan o‘tgani — alohida ilmiy tekshiruvni talab qiladi va bu yerda umumiy kartografik bosqich sifatida izohlanadi.</div></div>
 </section>
 </div>
-<div id="nav"><button id="play" aria-label="Pauza / davom"><svg id="pi" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
 <script>
 
 (function(){
@@ -442,17 +442,12 @@ function pause(){
   playing=false; clearTimeout(tid);
   left=Math.max(0, left-(Date.now()-t0));
   freezeBar();
-  document.getElementById('pi').innerHTML=PL;
 }
 function resume(){
   if(playing) return;
   playing=true;
-  document.getElementById('pi').innerHTML=PI;
   schedule(left>800? left : dur());
 }
-document.getElementById('play').addEventListener('click',function(e){
-  e.stopPropagation(); sndTap(); playing? pause() : resume();
-});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}

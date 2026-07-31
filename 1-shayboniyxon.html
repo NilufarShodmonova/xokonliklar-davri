@@ -312,7 +312,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>Kamoliddin Binoiy (XVI asr) — ko‘prik qurilishi haqidagi bevosita xabar: 1502-yil, to‘g‘on, Samarqand me’morlari, bir oylik muddat</li><li>A. R. Muhammadjonov — ko‘prik chizmalari va o‘lchovlari</li><li>Yu. Shevchenko — umumiy ko‘rinish rekonstruksiyasi</li><li>F. Bogoslovskiy, 1841–1842 — xarobalar tavsifi</li><li>XX asr boshlaridagi suratlar va eski otkritkalar</li><li>O‘zbekiston tarixi va gidrotexnika tarixi bo‘yicha ilmiy nashrlar</li></ul><div class="nt">O‘lchovlar va materiallar tavsifi arxeologik chizmalar asosida keltirilgan. Ko‘prikning qachon butunlay ishdan chiqqani aniq ma’lum emas.</div></div>
 </section>
 </div>
-<div id="nav"><button id="play" aria-label="Pauza / davom"><svg id="pi" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
 <script>
 (function(){
 "use strict";
@@ -417,17 +417,12 @@ function pause(){
   playing=false; clearTimeout(tid);
   left=Math.max(0, left-(Date.now()-t0));
   freezeBar();
-  document.getElementById('pi').innerHTML=PL;
 }
 function resume(){
   if(playing) return;
   playing=true;
-  document.getElementById('pi').innerHTML=PI;
   schedule(left>800? left : dur());
 }
-document.getElementById('play').addEventListener('click',function(e){
-  e.stopPropagation(); sndTap(); playing? pause() : resume();
-});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}

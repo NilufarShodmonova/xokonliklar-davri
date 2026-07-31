@@ -395,7 +395,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>Kamoliddin Binoiy — XVI asr, ko‘prik qurilishi haqidagi bevosita xabar</li><li>Fazlulloh ibn Ruzbehon, «Mehmonnomai Buxoro»</li><li>A. R. Muhammadjonov — ko‘prik chizmalari, g‘isht va qorishma tavsifi</li><li>A. Berns — XIX asr sayohat yozmalari</li><li>V. V. Bartold — Turkiston tarixi</li><li>Buxoro, Xiva va Qo‘qon xonliklari tarixiga oid ilmiy nashrlar</li></ul><div class="nt">Qorishma tarkibi va g‘isht o‘lchami arxeologik chizmalar asosida keltirilgan. Yo‘l tashkiliy tartibi umumlashtirilgan holda berilgan: amalda u xonlik va hududga qarab farq qilgan.</div></div>
 </section>
 </div>
-<div id="nav"><button id="play" aria-label="Pauza / davom"><svg id="pi" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></button><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
 <script>
 var IXD={"1": {"buxoro": ["Buxoro xonligi", "Cho‘l va voha yo‘llari. Asosiy muammo — suv. Shuning uchun yo‘l bo‘ylab sardobalar va quduqlar zanjiri qurilgan, karvonsaroylar bir kunlik yurish oralig‘ida joylashtirilgan. Buxoro — Samarqand — Qarshi yo‘nalishi eng gavjum bo‘lgan."], "xiva": ["Xiva xonligi", "Amudaryo quyi oqimi va Qizilqum cheti. Yo‘lning taqdirini daryo belgilagan: kechuv va to‘g‘on doim ta’mirda bo‘lgan. Cho‘l uchastkalarida yo‘l belgilari va quduqlar hayotiy ahamiyatga ega edi."], "qoqon": ["Qo‘qon xonligi", "Farg‘ona vodiysi va tog‘ dovonlari. Bu yerda asosiy qiyinchilik suv emas, relyef: tor darband, qiya so‘qmoq, tayanch devor va tog‘ ko‘priklari. Qo‘qon — Marg‘ilon — Andijon yo‘li vodiyni bir tizimga bog‘lagan."]}, "4": {"ketmon": ["Ketmon", "Asosiy quroli. Yer olish, ariq qazish, tuproqni tortib tekislash. Bitta odam kuniga ozgina yer qazadi — shuning uchun ishga ko‘p odam kerak bo‘lgan."], "belkurak": ["Belkurak", "Tuproq va shag‘alni ko‘chirish, qatlamni bir tekis yoyish. Yoyish sifati keyingi zichlash sifatini belgilaydi."], "toqmoq": ["Yog‘och to‘qmoq", "Qatlamni urib zichlash. Zichlanmagan asos ustida hech qanday qoplama uzoq turmaydi — bu davr muhandisligining asosiy qoidasi."], "arava": ["Arava", "Tosh, shag‘al va tuproq tashish. Tashish eng qimmat ish bo‘lgani uchun karerlar yo‘lga imkon qadar yaqin tanlangan."], "richag": ["Yog‘och richag", "Og‘ir toshni ko‘tarish va joyiga surish. Tayanch sifatida tosh yoki yog‘och kunda ishlatilgan."], "bolga": ["Tosh bolg‘a", "Toshni yorish va terma qoplamaga moslash. Tosh ishi butun qurilishning eng sekin qismi edi."]}, "5": {"Tabiiy zamin": "Yer o‘z holicha. Ustiga to‘g‘ridan-to‘g‘ri qoplama qo‘yilsa, u bir mavsumda cho‘kadi.", "Zichlangan tuproq": "To‘qmoq va valik bilan urib zichlanadi. Zichlanmagan asos ustida hech narsa turmaydi — bu birinchi qoida.", "Qum-shag‘al asos": "Suvni o‘tkazadi va yukni tarqatadi. Material imkon qadar yaqindan olinadi: tashish eng qimmat ish.", "Tosh terma yuza": "Faqat eng zarur joyda: ko‘prik kirishi, kechuv, shahar darvozasi oldi. Butun yo‘lga yetarli tosh ham, mehnat ham yo‘q edi."}, "8": {"koprik": ["Ko‘prik", "Kechuvni yil bo‘yi ishlaydigan qiladi. Eng qimmat va eng zarur inshoot: toshqin davrida ham harakat to‘xtamaydi. Ravoq ikki qavatli qilib terilgan."], "sardoba": ["Sardoba", "Yer osti suv omborisi. Gumbaz suvni issiqdan saqlaydi, bahorda to‘plangan suv yozgacha yetadi. Cho‘l yo‘lining tayanchi."], "karvonsaroy": ["Karvonsaroy", "Tunash, yuk saqlash va hayvonni dam oldirish joyi. Bir kunlik yurish oralig‘ida joylashtirilgani uchun yo‘lni bosqichlarga bo‘ladi."], "rabot": ["Rabot va bekat", "Yo‘l bo‘yidagi kichik istehkom. Yo‘lni nazorat qilgan, yo‘lovchiga panoh bergan va boj yig‘ilgan joy."]}, "15": {}};
 
@@ -502,17 +502,12 @@ function pause(){
   playing=false; clearTimeout(tid);
   left=Math.max(0, left-(Date.now()-t0));
   freezeBar();
-  document.getElementById('pi').innerHTML=PL;
 }
 function resume(){
   if(playing) return;
   playing=true;
-  document.getElementById('pi').innerHTML=PI;
   schedule(left>800? left : dur());
 }
-document.getElementById('play').addEventListener('click',function(e){
-  e.stopPropagation(); sndTap(); playing? pause() : resume();
-});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}
