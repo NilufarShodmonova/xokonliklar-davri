@@ -117,12 +117,16 @@ body{font-family:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;color:#f5eedf;u
 
 /* ---------- управление ---------- */
 #nav{position:fixed;inset:0;pointer-events:none;z-index:20}
-#play{position:absolute;left:2.4vw;top:2.4vh;width:clamp(44px,3.4vw,60px);height:clamp(44px,3.4vw,60px);
+#sldnav{position:absolute;right:2.4vw;bottom:2.4vh;display:flex;gap:1.1vw;
+ pointer-events:auto;align-items:center}
+.sldbtn{width:clamp(44px,3.4vw,60px);height:clamp(44px,3.4vw,60px);
  border-radius:50%;border:1.5px solid var(--line);background:rgba(9,17,29,.55);color:var(--gp);
  cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;
  transition:all .3s var(--e);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-#play:hover{border-color:var(--g)}
-#play svg{width:44%;height:44%;fill:currentColor}
+.sldbtn:hover{border-color:var(--g);color:var(--gl)}
+.sldbtn:active{transform:scale(.92)}
+.sldbtn svg{width:42%;height:42%;fill:none;stroke:currentColor;stroke-width:2.2;
+ stroke-linecap:round;stroke-linejoin:round}
 #dots{position:absolute;left:0;right:0;bottom:2.4vh;display:flex;gap:8px;justify-content:center;
  pointer-events:auto;flex-wrap:wrap;padding:0 6vw}
 #dots i{width:8px;height:8px;border-radius:50%;background:rgba(245,238,223,.26);cursor:pointer;
@@ -132,8 +136,9 @@ body{font-family:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;color:#f5eedf;u
  letter-spacing:.2em;color:var(--gp);opacity:.85;transition:color .5s ease}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:30;
  background:linear-gradient(90deg,var(--g),var(--gl));box-shadow:0 0 12px rgba(227,178,94,.55)}
-body.light #cnt,body.light #play{color:var(--ink)}
-body.light #play{background:rgba(255,252,244,.62);border-color:rgba(90,70,40,.3)}
+body.light #cnt,body.light .sldbtn{color:var(--ink)}
+body.light .sldbtn{background:rgba(255,252,244,.62);border-color:rgba(90,70,40,.3)}
+body.light .sldbtn:hover{color:#a97c2c;border-color:#a97c2c}
 body.light #dots i{background:rgba(64,48,26,.28)}
 body.light #dots i.on{background:#a97c2c}
 
@@ -250,7 +255,6 @@ body.light .pghead{
 body.light .pghead__name{color:var(--ink)}
 /* shapka ostidagi bo‘sh joy */
 #bar{z-index:50}
-#play{top:calc(var(--hh) + 2vh)}
 #cnt{top:calc(var(--hh) + 2.2vh)}
 .ti,.lst,#src{padding-top:var(--hh)}
 .ix{padding-top:calc(var(--hh) + 2.5vh)}
@@ -336,7 +340,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>Wikimedia Commons — barcha xaritalar jamoat mulki (Public domain)</li><li>Library of Congress — Markaziy Osiyo xaritalari to‘plami</li><li>UNESCO Silk Roads Programme — Ipak yo‘li bo‘yicha xalqaro tadqiqotlar</li><li>Turkiston to‘plami va XIX asr geografik nashrlari</li></ul><div class="nt">Xaritalar sana, muallif va nomi bo‘yicha manba ma’lumotlaridan olingan. Har bir xaritaning ichki mazmuni — qaysi yo‘l qayerdan o‘tgani — alohida ilmiy tekshiruvni talab qiladi va bu yerda umumiy kartografik bosqich sifatida izohlanadi.</div></div>
 </section>
 </div>
-<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div><div id="sldnav"><button class="sldbtn" id="prv" aria-label="Oldingi slayd" title="Oldingi slayd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button><button class="sldbtn" id="nxt" aria-label="Keyingi slayd" title="Keyingi slayd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
 <script>
 
 (function(){
@@ -448,6 +452,12 @@ function resume(){
   playing=true;
   schedule(left>800? left : dur());
 }
+document.getElementById('prv').addEventListener('click',function(e){
+  e.stopPropagation(); nav(i-1);
+});
+document.getElementById('nxt').addEventListener('click',function(e){
+  e.stopPropagation(); nav(i+1);
+});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}

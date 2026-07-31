@@ -117,12 +117,16 @@ body{font-family:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;color:#f5eedf;u
 
 /* ---------- управление ---------- */
 #nav{position:fixed;inset:0;pointer-events:none;z-index:20}
-#play{position:absolute;left:2.4vw;top:2.4vh;width:clamp(44px,3.4vw,60px);height:clamp(44px,3.4vw,60px);
+#sldnav{position:absolute;right:2.4vw;bottom:2.4vh;display:flex;gap:1.1vw;
+ pointer-events:auto;align-items:center}
+.sldbtn{width:clamp(44px,3.4vw,60px);height:clamp(44px,3.4vw,60px);
  border-radius:50%;border:1.5px solid var(--line);background:rgba(9,17,29,.55);color:var(--gp);
  cursor:pointer;pointer-events:auto;display:flex;align-items:center;justify-content:center;
  transition:all .3s var(--e);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-#play:hover{border-color:var(--g)}
-#play svg{width:44%;height:44%;fill:currentColor}
+.sldbtn:hover{border-color:var(--g);color:var(--gl)}
+.sldbtn:active{transform:scale(.92)}
+.sldbtn svg{width:42%;height:42%;fill:none;stroke:currentColor;stroke-width:2.2;
+ stroke-linecap:round;stroke-linejoin:round}
 #dots{position:absolute;left:0;right:0;bottom:2.4vh;display:flex;gap:8px;justify-content:center;
  pointer-events:auto;flex-wrap:wrap;padding:0 6vw}
 #dots i{width:8px;height:8px;border-radius:50%;background:rgba(245,238,223,.26);cursor:pointer;
@@ -132,8 +136,9 @@ body{font-family:"Manrope","Segoe UI",Helvetica,Arial,sans-serif;color:#f5eedf;u
  letter-spacing:.2em;color:var(--gp);opacity:.85;transition:color .5s ease}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:30;
  background:linear-gradient(90deg,var(--g),var(--gl));box-shadow:0 0 12px rgba(227,178,94,.55)}
-body.light #cnt,body.light #play{color:var(--ink)}
-body.light #play{background:rgba(255,252,244,.62);border-color:rgba(90,70,40,.3)}
+body.light #cnt,body.light .sldbtn{color:var(--ink)}
+body.light .sldbtn{background:rgba(255,252,244,.62);border-color:rgba(90,70,40,.3)}
+body.light .sldbtn:hover{color:#a97c2c;border-color:#a97c2c}
 body.light #dots i{background:rgba(64,48,26,.28)}
 body.light #dots i.on{background:#a97c2c}
 
@@ -287,7 +292,6 @@ body.light .pghead{
 body.light .pghead__name{color:var(--ink)}
 /* shapka ostidagi bo‘sh joy */
 #bar{z-index:50}
-#play{top:calc(var(--hh) + 2vh)}
 #cnt{top:calc(var(--hh) + 2.2vh)}
 .ti,.lst,#src{padding-top:var(--hh)}
 .ix{padding-top:calc(var(--hh) + 2.5vh)}
@@ -372,7 +376,7 @@ img{
   <div id="src"><h2>Manbalar</h2><ul><li>«O‘zbek xalq maqollari» — «Sharq» nashriyoti, Toshkent, 2005</li><li>Maqollar O‘zR FA Til va adabiyot instituti folklor arxividan yozib olingan</li><li>«Alpomish» — Fozil Yo‘ldosh o‘g‘li varianti</li><li>To‘ra Mirzayev. «Alpomish» dostonining o‘zbek variantlari. Toshkent: Fan, 1968</li><li>Baxshichilik san’ati bo‘yicha zamonaviy ilmiy nashrlar</li><li>Suratlar: Turkiston albomi (1865–1872), Library of Congress — jamoat mulki</li></ul><div class="nt">Maqollar matni akademik to‘plamdan o‘zgartirishsiz keltirilgan. Doston mazmuni Fozil Yo‘ldosh o‘g‘li variantiga tayanadi; baxshilar ijrosida tafsilotlar farq qiladi.</div></div>
 </section>
 </div>
-<div id="nav"><div id="cnt"></div><div id="dots"></div></div>
+<div id="nav"><div id="cnt"></div><div id="dots"></div><div id="sldnav"><button class="sldbtn" id="prv" aria-label="Oldingi slayd" title="Oldingi slayd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button><button class="sldbtn" id="nxt" aria-label="Keyingi slayd" title="Keyingi slayd"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
 <script>
 var IXD={"2": {"m0": ["Yo‘l azobi — go‘r azobi", "Yo‘l mashaqqati eng og‘ir azob bilan qiyoslanadi. Karvon yo‘liga chiqqan odam uchun bu majoz emas edi: cho‘l, dovon va kechuv har safar hayot bilan o‘ynashdi."], "m1": ["Yo‘l yurganga qisqarar", "Yo‘l faqat harakat qilgan odam uchun qisqaradi. To‘xtab qolgan uchun esa u cheksiz bo‘lib ko‘rinadi."], "m2": ["Yurgan — daryo, o‘tirgan — bo‘yra", "Yurgan odam daryodek tirik va foydali; o‘tirgan esa bo‘yradek bir joyda qoladi. Xalq harakatni hayotning o‘zi bilan tenglashtirgan."], "m3": ["Yo‘lni karvondan so‘ra, so‘zni shoirdan so‘ra", "Har ishni o‘z ustasidan so‘rash kerak. Yo‘lni bilgan — karvon, so‘zni bilgan — shoir. Bu maqolda yo‘l bilimi alohida hunar sifatida tan olinadi."], "m4": ["Yo‘l topguncha, yo‘ldosh top", "Safarda hamroh yo‘ldan muhimroq: yo‘ldosh bo‘lsa, yo‘l baribir topiladi. Karvon tartibi ham shu qoidaga asoslangan."], "m5": ["Yo‘ldoshini tashlagan yo‘lda qolar", "Hamrohini tashlab ketgan odam oxir-oqibat o‘zi yolg‘iz qoladi. Uzoq yo‘lda birdamlik — omon qolishning sharti edi."], "m6": ["Olis yo‘l otni sinar, og‘ir yo‘l mardni sinar", "Yo‘l — sinov. U otning ham, odamning ham asl qiyofasini ochib beradi."], "m7": ["Do‘st safarda sinalar", "Do‘stlikning haqiqiy o‘lchovi — birga bosib o‘tilgan yo‘l. Shuning uchun safar xalq tasavvurida sinov maydoni sanalgan."]}, "7": {"a0": ["Qo‘ng‘irot — vatan", "Doston Qo‘ng‘irot elidan boshlanadi. Boysari o‘z eli bilan Qalmoq eliga ko‘chib ketadi — shu ko‘chish butun voqeani harakatga keltiradi."], "a1": ["Yo‘lga chiqish", "Alpomish Barchinni olib kelish uchun uzoq safarga chiqadi. Bu — dostondagi markaziy «safar motivi» ning boshlanishi."], "a2": ["Yo‘lda topilgan do‘st", "Safar chog‘ida Alpomish Qorajon bilan do‘st tutinadi va shartlarni u bilan birga bajaradi. Yo‘l do‘st beradi — bu maqollardagi «yo‘ldosh» g‘oyasining dostondagi ko‘rinishi."], "a3": ["Qalmoq eli va zindon", "Alpomish amakisini qutqarish uchun Qalmoq eliga boradi va yetti yil zindonda qoladi. Tadqiqotchilar bu bosqichni oddiy asirlik emas, qahramonning sinovi deb izohlaydi."], "a4": ["Boychibor", "Qahramon zindondan oti Boychibor yordamida qutuladi. Otsiz yo‘l ham, qutulish ham yo‘q — ot dostonda yo‘lning tirik qismi."], "a5": ["Qaytish", "O‘z eliga qaytgan Alpomish adolatni tiklaydi. Safar shaxsiy maqsaddan (Barchinga yetishish) umumxalq manfaatiga (el birligi) o‘tishning vositasi bo‘lib chiqadi."]}, "11": {}};
 
@@ -485,6 +489,12 @@ function resume(){
   playing=true;
   schedule(left>800? left : dur());
 }
+document.getElementById('prv').addEventListener('click',function(e){
+  e.stopPropagation(); nav(i-1);
+});
+document.getElementById('nxt').addEventListener('click',function(e){
+  e.stopPropagation(); nav(i+1);
+});
 addEventListener('keydown',function(e){
   if(e.key==='ArrowRight'||e.key==='PageDown'){nav(i+1);}
   if(e.key==='ArrowLeft'||e.key==='PageUp'){nav(i-1);}
