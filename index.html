@@ -617,7 +617,7 @@ en:{
    ================================================================== */
 (function(){
   var lang = 'uz';
-  var IDLE_MS = 180000;   /* 3 минуты бездействия -> экран выбора языка */
+  var IDLE_MS = 300000;   /* 5 минут бездействия -> экран выбора языка (блокировка) */
   var idleTimer = null;
 
   var $  = function(s){ return document.querySelector(s); };
@@ -741,10 +741,14 @@ en:{
   /* --- сброс по бездействию --- */
   function resetIdle(){
     clearTimeout(idleTimer);
-    idleTimer = setTimeout(function(){ showScreen('#tp-splash'); }, IDLE_MS);
+    idleTimer = setTimeout(function(){
+      showScreen('#tp-splash');
+      /* qulflangandan keyin sahifa yangilansa ham splash ochilsin */
+      try { window.history.replaceState(null, '', window.location.pathname + window.location.search + '#tp-splash'); } catch(e){}
+    }, IDLE_MS);
   }
-  ['pointerdown','touchstart','mousemove','wheel','keydown'].forEach(function(ev){
-    document.addEventListener(ev, resetIdle, {passive:true});
+  ['pointerdown','pointermove','touchstart','touchmove','mousemove','wheel','keydown','click','scroll'].forEach(function(ev){
+    document.addEventListener(ev, resetIdle, {passive:true, capture:true});
   });
 
   /* --- поведение сенсорной панели --- */
